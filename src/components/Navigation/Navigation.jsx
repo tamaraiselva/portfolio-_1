@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
-import { 
-  Sun, 
-  Moon, 
-  Menu, 
-  X, 
-  Code, 
-  User, 
-  Briefcase, 
-  Mail, 
+import {
+  Sun,
+  Moon,
+  Menu,
+  X,
+  Code,
+  User,
+  Briefcase,
+  Mail,
   Zap,
   Home,
+  GraduationCap,
+  FolderOpen,
   ChevronRight,
   Settings
 } from 'lucide-react';
-import logo from  '../../assets/images/logo.png';
+import logo from '../../assets/images/logo.jpg';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,11 +28,11 @@ const Navigation = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       // Update active section based on scroll position
       const sections = ['hero', 'about', 'skills', 'projects', 'experience', 'contact'];
       const scrollPosition = window.scrollY + 100;
-      
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -53,6 +55,7 @@ const Navigation = () => {
     { name: 'Skills', href: '#skills', icon: Zap, id: 'skills' },
     { name: 'Projects', href: '#projects', icon: Code, id: 'projects' },
     { name: 'Experience', href: '#experience', icon: Briefcase, id: 'experience' },
+    { name: 'Education', href: '#education', icon: GraduationCap, id: 'education' },
     { name: 'Contact', href: '#contact', icon: Mail, id: 'contact' },
   ];
 
@@ -73,11 +76,10 @@ const Navigation = () => {
     <>
       {/* Top Bar with Logo and Menu Toggle */}
       <motion.nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled 
-            ? 'glass-effect shadow-lg backdrop-blur-md' 
-            : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
+          ? 'glass-effect shadow-lg backdrop-blur-md'
+          : 'bg-transparent'
+          }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
@@ -91,12 +93,12 @@ const Navigation = () => {
               whileTap={{ scale: 0.95 }}
             >
               <div className="relative">
-                  <img src={logo} alt="Logo" />
+                <img src={logo} alt="Logo" className="h-10 w-10 object-contain" />
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-500 rounded-xl blur opacity-30 animate-pulse"></div>
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-xl font-bold text-gray-300">Lakshmi Priyan</h1>
-                <p className="text-xs text-gray-500 text-gray-200">Frontend Developer</p>
+                <h1 className="text-xl font-bold text-white">Tamarai Selvan Ravi</h1>
+                <p className="text-xs text-gray-200">AI/ML Engineer & Python Developer</p>
               </div>
             </motion.div>
 
@@ -166,7 +168,7 @@ const Navigation = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-                
+
                 {/* Active indicator */}
                 {isSidebarOpen && (
                   <motion.div
@@ -227,16 +229,15 @@ const Navigation = () => {
               <div className="p-6 space-y-2">
                 {navItems.map((item, index) => {
                   const isActive = activeSection === item.id;
-                  
+
                   return (
                     <motion.button
                       key={item.name}
                       onClick={() => scrollToSection(item.href, item.id)}
-                      className={`w-full group relative flex items-center justify-between p-4 rounded-xl transition-all duration-300 ${
-                        isActive
-                          ? 'bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-500/30'
-                          : 'hover:bg-gray-100/50 hover:bg-gray-800/50'
-                      }`}
+                      className={`w-full group relative flex items-center justify-between p-4 rounded-xl transition-all duration-300 ${isActive
+                        ? 'bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-500/30'
+                        : 'hover:bg-gray-100/50 hover:bg-gray-800/50'
+                        }`}
                       initial={{ opacity: 0, x: 50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
@@ -244,28 +245,25 @@ const Navigation = () => {
                       whileTap={{ scale: 0.98 }}
                     >
                       <div className="flex items-center space-x-4">
-                        <div className={`p-2 rounded-lg transition-all duration-300 ${
-                          isActive
-                            ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg'
-                            : 'bg-gray-100 bg-gray-800 group-hover:bg-purple-100 group-hover:bg-purple-900/30'
-                        }`}>
+                        <div className={`p-2 rounded-lg transition-all duration-300 ${isActive
+                          ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg'
+                          : 'bg-gray-100 bg-gray-800 group-hover:bg-purple-100 group-hover:bg-purple-900/30'
+                          }`}>
                           <item.icon size={18} />
                         </div>
                         <div className="text-left">
-                          <span className={`font-medium transition-colors ${
-                            isActive
-                              ? 'text-purple-600 text-purple-400'
-                              : 'text-gray-700 text-gray-300'
-                          }`}>
+                          <span className={`font-medium transition-colors ${isActive
+                            ? 'text-purple-600 text-purple-400'
+                            : 'text-gray-700 text-gray-300'
+                            }`}>
                             {item.name}
                           </span>
                         </div>
                       </div>
-                      
+
                       <motion.div
-                        className={`transition-all duration-300 ${
-                          isActive ? 'text-purple-500' : 'text-gray-200 group-hover:text-purple-500'
-                        }`}
+                        className={`transition-all duration-300 ${isActive ? 'text-purple-500' : 'text-gray-200 group-hover:text-purple-500'
+                          }`}
                         animate={{ x: isActive ? 0 : -10 }}
                       >
                         <ChevronRight size={16} />
@@ -322,16 +320,15 @@ const Navigation = () => {
         <div className="space-y-3">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
-            
+
             return (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.href, item.id)}
-                className={`group relative block w-3 h-3 rounded-full transition-all duration-300 ${
-                  isActive
-                    ? 'bg-gradient-to-r from-purple-500 to-blue-500 scale-125'
-                    : 'bg-gray-300 bg-gray-400 hover:bg-purple-400 hover:bg-purple-500'
-                }`}
+                className={`group relative block w-3 h-3 rounded-full transition-all duration-300 ${isActive
+                  ? 'bg-gradient-to-r from-purple-500 to-blue-500 scale-125'
+                  : 'bg-gray-300 bg-gray-400 hover:bg-purple-400 hover:bg-purple-500'
+                  }`}
                 whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label={`Navigate to ${item.name}`}

@@ -23,7 +23,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-[#0e0e1a]">
+    <section id="about" className="pt-20 pb-10 relative overflow-hidden bg-[#0e0e1a]">
       {/* Background glow blobs */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

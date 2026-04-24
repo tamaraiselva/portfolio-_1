@@ -50,7 +50,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <div className="py-20 relative overflow-hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pt-10 pb-0 relative overflow-hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <section id="experience">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -60,7 +60,7 @@ const ExperienceSection = () => {
             transition={{ duration: 0.8 }}
           >
             {/* Section Header */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-8">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={
@@ -115,13 +115,13 @@ const ExperienceSection = () => {
           </motion.div>
         </div>
       </section>
-      <section id="education" className="min-h-screen pt-20">
+      <section id="education" className="pt-10">
         {/* Education Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ delay: 1 }}
-          className="mt-20"
+          className="mt-10"
         >
           <h3 className="text-3xl font-bold text-center text-gray-300 mb-12">
             Education

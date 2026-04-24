@@ -40,7 +40,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden">
+    <section id="skills" className="pt-10 pb-10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -109,7 +109,7 @@ const SkillsSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ delay: 1.2 }}
-            className="mt-16 text-center"
+            className="mt-8 text-center"
           >
             <div className="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
               <h3 className="text-2xl font-bold mb-4 text-gray-300">Always Learning</h3>

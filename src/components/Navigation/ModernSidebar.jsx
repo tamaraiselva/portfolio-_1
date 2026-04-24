@@ -22,7 +22,7 @@ import {
   Award,
 } from "lucide-react";
 import profileImage from "../../assets/images/TAMARAI_SELVAN.jpg";
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo-removebg-preview.png';
 
 const ModernSidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -117,7 +117,7 @@ const ModernSidebar = () => {
             whileHover={{ scale: 1.05 }}
           >
             <div >
-              <img src={logo} alt="Logo" width={40} height={40} className="invert brightness-0 " />
+              <img src={logo} alt="Logo" width={40} height={40} className="" />
             </div>
             <div>
               <h1 className="text-lg font-bold text-white">Tamarai Selvan Ravi</h1>
@@ -211,8 +211,8 @@ const ModernSidebar = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 p-6">
-          <div className="space-y-2">
+        <nav className="flex-1 p-4 overflow-y-auto scrollbar-hide">
+          <div className="space-y-1">
             {navItems.map((item, index) => {
               const isActive = activeSection === item.id;
 
@@ -220,7 +220,7 @@ const ModernSidebar = () => {
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.href, item.id)}
-                  className={`w-full group relative flex items-center space-x-4 p-4 rounded-xl transition-all duration-300 ${isActive
+                  className={`w-full group relative flex items-center space-x-4 p-3 rounded-xl transition-all duration-300 ${isActive
                     ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-400"
                     : "text-gray-300 hover:bg-gray-800/50 hover:text-white"
                     }`}
