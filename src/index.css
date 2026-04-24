@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import the modern design system */
+@import './styles/design-system.css';
+
+/* Base styles using the new design system */
+* {
+  border-color: var(--neutral-700);
+}
+
+body {
+  font-family: var(--font-secondary);
+  color: var(--neutral-50);
+  background: var(--neutral-950);
+  line-height: var(--leading-normal);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced Glass Effect using design system */
+.glass-effect {
+  background: rgba(23, 23, 23, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(115, 115, 115, 0.3);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Enhanced Gradient Text using design system */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Enhanced Glow Effect using design system */
+.glow-effect {
+  box-shadow: var(--glow-cyan);
+  transform: translateY(-2px);
+}
+
+/* Floating Animation */
+.floating-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Custom Scrollbar using design system colors */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-secondary);
+  border-radius: var(--radius-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-primary);
+}
+
+/* Selection Styles using design system */
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+  color: inherit;
+}
+
+::-moz-selection {
+  background: rgba(34, 211, 238, 0.3);
+  color: inherit;
+}
+
+/* Focus States for Accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--cyber-cyan-400);
+  outline-offset: 2px;
+  border-radius: var(--radius-base);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom Animations using design system */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+  .glass-effect {
+    backdrop-filter: blur(15px);
+  }
+}
+
+/* Loading Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-2xl);
+}
+
+/* Text Effects using design system */
+.text-glow {
+  text-shadow: 0 0 10px var(--cyber-cyan-400);
+}
+
+/* Border Effects using design system */
+.border-gradient {
+  border: 2px solid transparent;
+  background: var(--gradient-primary) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+/* Modern utility classes */
+.bg-gradient-dark {
+  background: var(--gradient-dark);
+}
+
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-secondary {
+  background: var(--gradient-secondary);
+}
+
+.bg-gradient-accent {
+  background: var(--gradient-accent);
+}
+
+/* Typography utilities */
+.font-primary {
+  font-family: var(--font-primary);
+}
+
+.font-secondary {
+  font-family: var(--font-secondary);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
