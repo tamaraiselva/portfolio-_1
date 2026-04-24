@@ -1,9 +1,9 @@
+@import './styles/design-system.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Import the modern design system */
-@import './styles/design-system.css';
 
 /* Base styles using the new design system */
 * {
@@ -89,6 +89,7 @@ a:focus-visible {
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -104,6 +105,7 @@ a:focus-visible {
     transform: translateX(-100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -115,6 +117,7 @@ a:focus-visible {
     transform: translateX(0);
     opacity: 1;
   }
+
   to {
     transform: translateX(-100%);
     opacity: 0;
@@ -126,6 +129,7 @@ a:focus-visible {
     transform: translateY(30px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
